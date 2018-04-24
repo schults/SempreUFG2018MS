@@ -1,0 +1,1 @@
+Erro ao tentar obter id do curso. Exception: ERROR: permission denied for relation curso_ufg

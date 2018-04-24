@@ -1,0 +1,31 @@
+﻿Parâmetros e Definições
+
+É necessário executar o seguinte script para configurar o banco inicialmente:
+CREATE DATABASE teste
+CREATE USER usuario WITH PASSWORD ‘senha’
+GRANT ALL PRIVILEGES ON DATABASE teste to usuario; (escrita incorreta, teste não tem aspas)
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO usuario; (garante todos os privilégios ao usuário sobre todas as tabelas do banco de dados)
+
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO usuario; 
+
+
+INSERT INTO egresso (nome,numero_documento_identidade,tipo_documento_identidade,data_nascimento,visibilidade_dados,localizacao_naturalidade) VALUES ('João da Silva','123.456.789-10','CPF',to_date('11/10/3333', 'dd/MM/yyyy'),'Privado',1)RETURNING id_egresso;
+
+
+
+É necessário executar o DDL (definido em ddl.sql) antes da tentativa de importação dos dados no banco. Também é necessário a execução do DML para a carga inicial do banco. Dados não inseridos no DML, mas que forem necessários para alguma inserção de dado, gerarão erros que serão registrados no arquivo de registro de erros: ‘Relato de Importacao.txt’.
+
+Definições e suposições realizadas pelo ImportadorEgressos:
+* Formato de data deve ser dd/MM/yyyy. Erros serão registrados no arquivo de relato.
+* Tamanhos que excedem o máximo definido no modelo gerarão erros, que serão registrados no arquivo ‘Relato de Importacao.txt’, assim como todos os erros ocorridos durante a tentativa de inserção dos dados vindos do documento de importação.        
+* A visibilidade dos dados não é passada no arquivo de importação, logo, o modo privado foi usado como padrão. 
+* Localização geográfica foi adicionada na carga do banco usada como padrão.
+
+Parâmetros: Caminho do arquivo onde se encontra o arquivo ‘Egressos-para-Importar.txt’, podendo ser relativo (Ex: ./DadosEntrada/’ ara um SO linux ou ‘.\DadosEntrada\’ no Windows) ou absoluto(Ex: C:\Users\Usuario\IntegrAplic), que deve ser passado via argumento. Se o parâmetro for omitido, o arquivo deve estar no diretório corrente em que o software for executado. 
+
+Está acompanhado um .jar para execução do programa. Para testá-lo nesta pasta é necessário executar o seguinte comando:
+	java -jar sempre-ufg-1.0.jar
+Será gerado um arquivo ‘Relato de Importacao.txt’ com o relatório da importação.
+
+Um exemplo de arquivo ‘Egressos-para-Importar.txt’ segue em anexo.

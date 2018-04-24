@@ -1,0 +1,7 @@
+Reg.1\João da Silva\CPF\123.456.789-10\11/10/3333\Engenharia de Software\0296\1220\123650\Criação de ambiente para entrega contínua
+Reg.2\CPF\123.456.789-10\Engenharia de Software\Monitoria\01/01/1997\01/07/1997\Monitoria em Integração de Aplicações
+Reg.1\João da Silva\CPF\123.456.789-11\01/01/1900\Engenharia de Software\0296\1220\123650\Criação de ambiente para entrega contínua
+Reg.1\Um nome\RG\34242\03/12/2345\Engenharia de Software\061999\072003\051123\Aprendizado de Máquina na Cloud: uma proposta do futuro\
+Reg.1\Um outro nome\RG\32242\12/02/1998\Engenharia de Software\061999\072003\051121\Aprendizado de Máquina na Cloud: uma proposta do presente\
+Reg.1\Um terceiro nome\RG\34142\19/03/1989\Engenharia de Software\061999\072003\951123\Aprendizado de Máquina na Cloud: uma proposta do passado\
+Reg.2\RG\34242\Engenharia de Software\Monitoria\10/09/1998\10/10/1990\Monitoria em Sistemas Operacionais\
